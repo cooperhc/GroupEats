@@ -1,5 +1,2 @@
 <h1>GroupEats</h1>
 <button (click)="createEvent()" [disabled]="eventCreated">Create event</button>
-<button *ngIf="eventCreated" (click)="openEvent()">Open Event in New Tab</button>
-<button *ngIf="eventCreated && !linkCopied" (click)="copyLink()">Copy Link</button>
-<button *ngIf="eventCreated && linkCopied">Link Copied</button>

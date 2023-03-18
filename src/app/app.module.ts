@@ -6,20 +6,25 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { CreateFormComponent } from './create-form/create-form.component';
 import { VoteComponent } from './vote/vote.component';
-import { ResultsComponent } from './results/results.component';
+import { HttpClientModule } from '@angular/common/http'
+import { FormsModule } from '@angular/forms'
+import { ReactiveFormsModule } from '@angular/forms'
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     CreateFormComponent,
-    VoteComponent,
-    ResultsComponent
+    VoteComponent
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
+
   providers: [],
   bootstrap: [AppComponent]
 })

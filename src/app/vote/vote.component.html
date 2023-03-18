@@ -1,1 +1,41 @@
-<p>vote works!</p>
+<h1>GroupEats</h1>
+<h3>Choose Food Types</h3>
+
+<div *ngIf="mexican" class="option">
+    <label class="label">
+    <div class="rectangle">Mexican</div>
+    </label>
+    <div class="checkbox-container">
+    <input type="checkbox" value="mexican-green">
+    <label class="label">
+    </label>
+    <input type="checkbox" value="mexican-gray">
+    <label class="label">
+    </label>
+    <input type="checkbox" value="mexican-red">
+    <label class="label">
+    </label>
+    </div>
+</div>
+
+<div *ngIf="seafood" class="option">
+    <label class="label">
+    <div class="rectangle">Seafood</div>
+    </label>
+    <div class="checkbox-container">
+    <input type="checkbox" value="seafood-green">
+    <label class="label">
+    </label>
+    <input type="checkbox" value="seafood-gray">
+    <label class="label">
+    </label>
+    <input type="checkbox" value="seafood-red">
+    <label class="label">
+    </label>
+    </div>
+</div>
+
+
+<button (click)="submit()" [disabled]="submitted">Submit Vote</button>
+<button *ngIf="submitted" (click)="openResults()">Open Event in New Tab</button>
+<div *ngIf="errorMessage">{{ errorMessage }}</div>

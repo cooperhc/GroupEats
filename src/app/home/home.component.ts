@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -8,29 +9,22 @@ import { Component } from '@angular/core';
 export class HomeComponent {
   eventCreated = false
   eventCode = -1
-  linkCopied = false
+  
 
 
   createEvent(): void{
-    let randomSixDigitNumber = Math.floor(100000 + Math.random() * 900000)
-    console.log(`Event created: ${randomSixDigitNumber}`)
-    this.eventCode = randomSixDigitNumber
+    //Code changed to use DB event ID
+
+    //let randomEightDigitNumber = Math.floor(10000000 + Math.random() * 90000000)
+    //console.log(`Event created: ${randomEightDigitNumber}`)
+    //this.eventCode = randomEightDigitNumber
+    //window.open(`/create-event/${this.eventCode}`, "_blank")
     this.eventCreated = true
+    window.open(`/create-event/`, "_blank")
+    
   }
 
-  openEvent(): void{
-    console.log("Open event clicked")
-    window.open(`/vote/${this.eventCode}`, "_blank")
-  }
-
-  copyLink(): void{
-    console.log("Copy link clicked")
-    let eventLink = `https://groupeats.us/vote/${this.eventCode}`
-    navigator.clipboard.writeText(eventLink)
-    this.linkCopied = true
-  }
-
-
+  
   constructor(){}
 
 }

@@ -1,0 +1,32 @@
+input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    position: relative;
+    margin-right: 10px;
+    border: 2px solid #ddd;
+    border-radius: 50%;
+  }
+  
+  input[type="checkbox"]:checked {
+    background-color: #2196f3;
+    border-color: #2196f3;
+  }
+  
+  .label {
+    font-size: 16px;
+    margin-right: 10px;
+  }
+  
+  .rectangle {
+    width: 200px;
+    height: 30px;
+    background-color: #ddd;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    margin-right: 10px;
+  }
+  

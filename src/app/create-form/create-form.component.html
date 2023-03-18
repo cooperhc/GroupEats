@@ -1,1 +1,65 @@
-<p>create-form works!</p>
+<h1>GroupEats</h1>
+<h3>Enter Location</h3>
+<form [formGroup]="zipForm">
+    <label>
+    ZIP code:
+    <input type="text" formControlName="zip">
+    </label>
+</form>
+  
+  
+
+<h2>Choose Price Options</h2>
+
+<div class="option">
+    <input type="checkbox" value="1">
+    <label class="label">
+    <div class="rectangle">$</div>
+    </label>
+</div>
+
+<div class="option">
+    <input type="checkbox" value="2">
+    <label class="label">
+    <div class="rectangle">$$</div>
+    </label>
+</div>
+
+<div class="option">
+    <input type="checkbox" value="3">
+    <label class="label">
+    <div class="rectangle">$$$</div>
+    </label>
+</div>
+
+<div class="option">
+    <input type="checkbox" value="4">
+    <label class="label">
+    <div class="rectangle">$$$$</div>
+    </label>
+</div>
+
+<h2>Choose Cuisine Options</h2>
+
+<div class="option">
+    <input type="checkbox" value="mexican">
+    <label class="label">
+    <div class="rectangle">Mexican</div>
+    </label>
+</div>
+
+<div class="option">
+    <input type="checkbox" value="seafood">
+    <label class="label">
+    <div class="rectangle">Seafood</div>
+    </label>
+</div>
+
+<button (click)="createEvent()" [disabled]="eventCreated">Create Event</button>
+<button *ngIf="eventCreated" (click)="openEvent()">Open Event in New Tab</button>
+<button *ngIf="eventCreated && !linkCopied" (click)="copyLink()">Copy Link</button>
+<button *ngIf="eventCreated && linkCopied">Link Copied</button>
+  
+  
+
+  
