@@ -20,8 +20,7 @@ export class HomeComponent {
     //this.eventCode = randomEightDigitNumber
     //window.open(`/create-event/${this.eventCode}`, "_blank")
     this.eventCreated = true
-    window.open(`/create-event/`, "_blank")
-    
+    window.open(`${window.location.origin}/create-event/`, '_blank');    
   }
 
   

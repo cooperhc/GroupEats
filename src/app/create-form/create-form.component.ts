@@ -72,12 +72,12 @@ export class CreateFormComponent {
 
   openEvent(): void{
     console.log("Open event clicked")
-    window.open(`/vote/${this.id}`, "_blank")
+    window.open(`${window.location.origin}/vote/${this.id}`, "_blank")
   }
 
   copyLink(): void{
     console.log("Copy link clicked")
-    let eventLink = `https://groupeats.us/vote/${this.id}`
+    let eventLink = `${window.location.origin}/vote/${this.id}`
     navigator.clipboard.writeText(eventLink)
     this.linkCopied = true
   }

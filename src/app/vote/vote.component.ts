@@ -92,7 +92,7 @@ export class VoteComponent {
   }
 
   openResults(): void{
-    window.open(`/results/${this.id}`, "_blank")
+    window.open(`${window.location.origin}/results/${this.id}`, "_blank")
   }
 
 
