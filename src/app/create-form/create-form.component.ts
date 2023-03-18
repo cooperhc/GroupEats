@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { Title } from '@angular/platform-browser'
 import { FormBuilder } from '@angular/forms'
 import { HttpClient } from '@angular/common/http'
+import { Router } from '@angular/router';
+
 
 interface idResponse{
   id: string
@@ -72,7 +74,8 @@ export class CreateFormComponent {
 
   openEvent(): void{
     console.log("Open event clicked")
-    window.open(`${window.location.origin}/vote/${this.id}`, "_blank")
+    this.router.navigate([`../vote/${this.id}`])
+    //window.open(`${window.location.origin}/vote/${this.id}`, "_blank")
   }
 
   copyLink(): void{
@@ -90,7 +93,8 @@ export class CreateFormComponent {
   constructor(
     private titleService: Title,
     private formBuilder: FormBuilder,
-    private http: HttpClient
+    private http: HttpClient,
+    private router: Router
     ){}
 
 }

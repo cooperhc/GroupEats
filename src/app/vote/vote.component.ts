@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router'
 import { Title } from '@angular/platform-browser'
 import { FormBuilder } from '@angular/forms'
 import { HttpClient } from '@angular/common/http'
+import { Router } from '@angular/router'
 
 interface event{
   created: string,
@@ -92,7 +93,8 @@ export class VoteComponent {
   }
 
   openResults(): void{
-    window.open(`${window.location.origin}/results/${this.id}`, "_blank")
+    this.router.navigate([`../results/${this.id}`])
+    //window.open(`${window.location.origin}/results/${this.id}`, "_blank")
   }
 
 
@@ -113,6 +115,7 @@ export class VoteComponent {
     private route:ActivatedRoute,
     private titleService: Title,
     private formBuilder: FormBuilder,
-    private http: HttpClient
+    private http: HttpClient,
+    private router: Router
     ){}
 }

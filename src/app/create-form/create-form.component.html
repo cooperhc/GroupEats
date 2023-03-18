@@ -56,9 +56,11 @@
 </div>
 
 <button (click)="createEvent()" [disabled]="eventCreated">Create Event</button>
-<button *ngIf="eventCreated" (click)="openEvent()">Open Event in New Tab</button>
 <button *ngIf="eventCreated && !linkCopied" (click)="copyLink()">Copy Link</button>
 <button *ngIf="eventCreated && linkCopied">Link Copied</button>
+
+<button *ngIf="eventCreated" (click)="openEvent()">Open Event To Vote, After Sharing Link</button>
+
   
   
 

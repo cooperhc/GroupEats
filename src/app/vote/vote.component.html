@@ -37,5 +37,5 @@
 
 
 <button (click)="submit()" [disabled]="submitted">Submit Vote</button>
-<button *ngIf="submitted" (click)="openResults()">Open Event in New Tab</button>
+<button (click)="openResults()">View Results</button>
 <div *ngIf="errorMessage">{{ errorMessage }}</div>
