@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Title } from '@angular/platform-browser'
 import { FormBuilder } from '@angular/forms'
 import { HttpClient } from '@angular/common/http'
-import { Router } from '@angular/router';
+import { Router } from '@angular/router'
 
 
 interface idResponse{
@@ -74,14 +74,14 @@ export class CreateFormComponent {
 
   openEvent(): void{
     console.log("Open event clicked")
-    this.router.navigate([`../vote/${this.id}`])
+    this.router.navigate([`/vote/${this.id}`])
     //window.open(`${window.location.origin}/vote/${this.id}`, "_blank")
   }
 
   copyLink(): void{
     console.log("Copy link clicked")
-    let eventLink = `${window.location.origin}/vote/${this.id}`
-    navigator.clipboard.writeText(eventLink)
+    //let eventLink = `${window.location.origin}/vote/${this.id}`
+    navigator.clipboard.writeText(this.id)
     this.linkCopied = true
   }
 

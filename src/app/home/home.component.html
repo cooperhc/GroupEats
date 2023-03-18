@@ -1,2 +1,10 @@
 <h1>GroupEats</h1>
 <button [routerLink]="['create-event']">Create event</button>
+<button (click)="openEvent()">Open event</button>
+
+<form [formGroup]="form">
+    <label>
+    Enter Event Code
+    <input type="text" formControlName="id">
+    </label>
+</form>
