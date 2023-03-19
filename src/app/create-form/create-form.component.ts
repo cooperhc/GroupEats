@@ -19,6 +19,7 @@ export class CreateFormComponent {
   linkCopied = false
   id = ""
   eventCreated = false
+  errorMessage = ""
 
 
   zipForm = this.formBuilder.group({
@@ -27,7 +28,11 @@ export class CreateFormComponent {
 
   createEvent() {
     //Store zip; need to check validity
-    const zipCode = this.zipForm.value.zip
+    const zipCode = this.zipForm.value.zip as string
+    if(zipCode.length != 5 || isNaN(zipCode as unknown as number)){
+      this.errorMessage="Invalid ZIP code"
+      return
+    }
 
     //Print zip for debugging
     console.log(zipCode)
@@ -41,7 +46,7 @@ export class CreateFormComponent {
       "seafood": false
     }
 
-    //Goes through each checked option, also prints
+    //Goes through each checked option, also prints, needs to be updated to check validity 
     for (let i = 0; i < checked.length; i++) {
       if (checked[i].checked) {
 
