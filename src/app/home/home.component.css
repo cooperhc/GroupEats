@@ -1,0 +1,48 @@
+body {
+    background-image: url("home.png");
+    background-color: beige;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+    background-position: center center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1, button, form {
+    margin: 20px 0;
+}
+
+h1 {
+    font-family: 'Georgia';
+    color: #1e2c4a;
+    font-size: xx-large;
+    font-weight: bolder;
+}
+  
+button {
+    background-color: #1e2c4a;
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    font-family: 'Georgia';
+    font-weight: bolder;
+    
+}
+  
+button:hover {
+    background-color: #fff;
+    color: #1e2c4a;
+    font-family: 'Georgia';
+    font-weight: bolder;
+}
+
+::placeholder {
+    text-align: center;
+  }
+  
