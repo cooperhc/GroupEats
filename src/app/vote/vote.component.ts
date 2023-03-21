@@ -84,7 +84,8 @@ export class VoteComponent {
       "formInfo": this.formInfo
     }
 
-    let url = `http://67.207.92.253:1000/responses/`
+    let url = `https://67.207.92.253:1000/responses/`
+    //https://67.207.92.253:1000/
 
     this.http.post(url, postRes).subscribe((response) => {
       //response not working
@@ -101,8 +102,8 @@ export class VoteComponent {
   ngOnInit(): void{
     this.titleService.setTitle('Vote on Event')
     this.id = this.route.snapshot.paramMap.get('id') as string
-
-    let url = `http://67.207.92.253:1000/events/${this.id}`
+    //https://67.207.92.253:1000/
+    let url = `https://67.207.92.253:1000/events/${this.id}`
     this.http.get<event[]>(url).subscribe((response) => {
       console.log(response[0])
       this.res = response[0]
