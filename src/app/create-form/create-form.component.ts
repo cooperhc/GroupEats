@@ -68,7 +68,7 @@ export class CreateFormComponent {
       formInfo: cuisine
     }
 
-    this.http.post<idResponse[]>('http://67.207.92.253:1000/events', event).subscribe((response) => {
+    this.http.post<idResponse[]>('https://groupeats.net/events', event).subscribe((response) => {
       console.log(response[0].id)
       this.id = response[0].id
     })

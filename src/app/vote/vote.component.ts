@@ -84,7 +84,7 @@ export class VoteComponent {
       "formInfo": this.formInfo
     }
 
-    let url = `http://67.207.92.253:1000/responses/`
+    let url = `https://groupeats.net/responses/`
 
     this.http.post(url, postRes).subscribe((response) => {
       //response not working
@@ -102,7 +102,7 @@ export class VoteComponent {
     this.titleService.setTitle('Vote on Event')
     this.id = this.route.snapshot.paramMap.get('id') as string
 
-    let url = `http://67.207.92.253:1000/events/${this.id}`
+    let url = `https://groupeats.net/events/${this.id}`
     this.http.get<event[]>(url).subscribe((response) => {
       console.log(response[0])
       this.res = response[0]

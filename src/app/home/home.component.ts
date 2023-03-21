@@ -24,7 +24,8 @@ export class HomeComponent {
     //window.open(`/create-event/${this.eventCode}`, "_blank")
     //window.open(`${window.location.origin}/create-event/`, '_blank');    
     let str = this.form.value.id as string
-    if(str=='' || str.length !== 5 || isNaN(str as unknown as number)){
+    if(str==''){
+      //needs to be validated
       return
     }
     console.log(this.form.value.id)
