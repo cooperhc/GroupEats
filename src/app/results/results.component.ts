@@ -95,7 +95,7 @@ export class ResultsComponent {
     console.log(this.zip)
     console.log(food)
 
-    fetch(`http://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=${this.zip}&term=restaurants&radius=8000&sort_by=best_match&limit=20&categories=${food}`, options)
+    fetch(`https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=${this.zip}&term=restaurants&radius=8000&sort_by=best_match&limit=20&categories=${food}`, options)
       .then(response => response.json())
       .then(data => {
         //this.output2 = data.businesses[0].id
