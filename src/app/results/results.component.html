@@ -1,3 +1,31 @@
 <h1>GroupEats</h1>
 <h3>View Results</h3>
-<button (click)="generateResults()" [disabled]="resultsGenerated">Generate Results</button>
+<!--<button (click)="generateResults()" [disabled]="resultsGenerated">Generate Results</button>-->
+
+<div class="restaurant-box">
+    <h2>{{ restaurant1.name }}</h2>
+    <img src="{{ restaurant1.image_url }}" alt="{{ restaurant1.name }}">
+    <p>Price: {{ restaurant1.price }}</p>
+    <p>Rating: {{ restaurant1.rating }}/5</p>
+</div>
+  
+<div class="restaurant-box">
+    <h2>{{ restaurant2.name }}</h2>
+    <img src="{{ restaurant2.image_url }}" alt="{{ restaurant2.name }}">
+    <p>Price: {{ restaurant2.price }}</p>
+    <p>Rating: {{ restaurant2.rating }}/5</p>
+</div>
+
+<div class="restaurant-box">
+    <h2>{{ restaurant3.name }}</h2>
+    <img src="{{ restaurant3.image_url }}" alt="{{ restaurant3.name }}">
+    <p>Price: {{ restaurant3.price }}</p>
+    <p>Rating: {{ restaurant3.rating }}/5</p>
+</div>
+
+<div class="restaurant-box">
+    <h2>{{ restaurant4.name }}</h2>
+    <img src="{{ restaurant4.image_url }}" alt="{{ restaurant4.name }}">
+    <p>Price: {{ restaurant4.price }}</p>
+    <p>Rating: {{ restaurant4.rating }}/5</p>
+</div>
