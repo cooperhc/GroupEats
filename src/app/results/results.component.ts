@@ -109,6 +109,7 @@ export class ResultsComponent {
         if(!(this.restaurant4.price != undefined)){this.restaurant4.price="???"}
         console.log(data);
         console.log(JSON.stringify(data))
+        //test
       })
       .catch(err => console.error(err));
       
