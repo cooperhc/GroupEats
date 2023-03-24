@@ -110,6 +110,7 @@ export class ResultsComponent {
         console.log(data);
         console.log(JSON.stringify(data))
         //test
+        //test
       })
       .catch(err => console.error(err));
       
