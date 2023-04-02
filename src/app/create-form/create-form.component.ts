@@ -41,40 +41,165 @@ export class CreateFormComponent {
     //Get all results
     let checked = document.querySelectorAll('input[type="checkbox"]') as NodeListOf<HTMLInputElement>
     
-    let cuisine = {
+    let options = {
+      "onedollar": false,
+      "twodollar": false,
+      "threedollar": false,
+      "fourdollar": false,
+      "bar": false,
+      "burgers": false,
+      "breakfast": false,
+      "sandwiches": false,
+      "american": false,
       "mexican": false,
-      "seafood": false
+      "seafood": false,
+      "pizza": false,
+      "fastfood": false,
+      "salad": false,
+      "italian": false,
+      "mediterranean": false,
+      "japanese": false,
+      "cafe": false,
+      "chickenwings": false,
+      "vegan": false,
+      "halal": false,
+      "vietnamese": false,
+      "french": false,
+      "diner": false,
+      "korean": false,
+      "middleeastern": false,
+      "indian": false,
+      "thai": false,
+      "vegetarian": false,
+      "glutenfree": false,
+      "chinese": false,
+      "noodles": false,
+      "fishandchips": false,
+      "steakhouse": false,
     }
 
     //Goes through each checked option, also prints, needs to be updated to check validity 
     for (let i = 0; i < checked.length; i++) {
       if (checked[i].checked) {
-
-        if(checked[i].value == 'mexican'){
-          cuisine.mexican = true
-        }
-
-        if(checked[i].value == 'seafood'){
-          cuisine.seafood = true
-        }
-
-        console.log(checked[i].value + " is checked.");
-      }
-    }
+        switch (checked[i].value) {
+          case 'onedollar':
+            options.onedollar = true;
+            break;
+          case 'twodollar':
+            options.twodollar = true;
+            break;
+          case 'threedollar':
+            options.threedollar = true;
+            break;
+          case 'fourdollar':
+            options.fourdollar = true;
+            break;
+          case 'bar':
+            options.bar = true;
+            break;
+          case 'burgers':
+            options.burgers = true;
+            break;
+          case 'breakfast':
+            options.breakfast = true;
+            break;
+          case 'sandwiches':
+            options.sandwiches = true;
+            break;
+          case 'american':
+            options.american = true;
+            break;
+          case 'mexican':
+            options.mexican = true;
+            break;
+          case 'seafood':
+            options.seafood = true;
+            break;
+          case 'pizza':
+            options.pizza = true;
+            break;
+          case 'fastfood':
+            options.fastfood = true;
+            break;
+          case 'salad':
+            options.salad = true;
+            break;
+          case 'italian':
+            options.italian = true;
+            break;
+          case 'mediterranean':
+            options.mediterranean = true;
+            break;
+          case 'japanese':
+            options.japanese = true;
+            break;
+          case 'cafe':
+            options.cafe = true;
+            break;
+          case 'chickenwings':
+            options.chickenwings = true;
+            break;
+          case 'vegan':
+            options.vegan = true;
+            break;
+          case 'halal':
+            options.halal = true;
+            break;
+          case 'vietnamese':
+            options.vietnamese = true;
+            break;
+          case 'french':
+            options.french = true;
+            break;
+          case 'diner':
+            options.diner = true;
+            break;
+          case 'korean':
+            options.korean = true;
+            break;
+          case 'middleeastern':
+            options.middleeastern = true;
+            break;
+          case 'indian':
+            options.indian = true;
+            break;
+          case 'thai':
+            options.thai = true;
+            break;
+          case 'vegetarian':
+            options.vegetarian = true;
+            break;
+          case 'glutenfree':
+            options.glutenfree = true;
+            break;
+          case 'chinese':
+            options.chinese = true;
+            break;
+          case 'noodles':
+            options.noodles = true;
+            break;
+          case 'fishandchips':
+            options.fishandchips = true;
+            break;
+          case 'steakhouse':
+            options.steakhouse = true;
+            break;
+          default:
+            console.error('Invalid option:', checked[i].value);
+            break;
+    }}}
 
     let event = {
       zip: zipCode,
       radius: 20,
-      formInfo: cuisine
+      formInfo: options
     }
 
     this.http.post<idResponse[]>('https://groupeats.net/events', event).subscribe((response) => {
       console.log(response[0].id)
       this.id = response[0].id
     })
-
     this.eventCreated = true
-
   }
 
   openEvent(): void{

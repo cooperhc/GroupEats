@@ -1,41 +1,416 @@
 <h1>GroupEats</h1>
-<h3>Choose Food Types</h3>
+<h3>Choose Maximum Preferred Price</h3>
 
-<div *ngIf="mexican" class="option">
+<div class="food-option">
     <label class="label">
-    <div class="rectangle">Mexican</div>
+    <div class="rectangle">$</div>
     </label>
-    <div class="checkbox-container">
-    <input type="checkbox" value="mexican-green">
-    <label class="label">
-    </label>
-    <input type="checkbox" value="mexican-gray">
-    <label class="label">
-    </label>
-    <input type="checkbox" value="mexican-red">
-    <label class="label">
-    </label>
-    </div>
+    <mat-button-toggle-group class="button-toggle-group" (change)="toggleOneDollar($event.value)">
+        <mat-button-toggle value="green" class="option-green" aria-label="Sounds good">Sounds good</mat-button-toggle>
+        <mat-button-toggle value="gray" class="option-gray" aria-label="Prefer not">Prefer not</mat-button-toggle>
+        <mat-button-toggle value="red" class="option-red" aria-label="Can't do">Can't do</mat-button-toggle>
+    </mat-button-toggle-group>
 </div>
 
-<div *ngIf="seafood" class="option">
+<div class="food-option">
     <label class="label">
-    <div class="rectangle">Seafood</div>
+    <div class="rectangle">$$</div>
     </label>
-    <div class="checkbox-container">
-    <input type="checkbox" value="seafood-green">
-    <label class="label">
-    </label>
-    <input type="checkbox" value="seafood-gray">
-    <label class="label">
-    </label>
-    <input type="checkbox" value="seafood-red">
-    <label class="label">
-    </label>
-    </div>
+    <mat-button-toggle-group class="button-toggle-group" (change)="toggleTwoDollar($event.value)">
+        <mat-button-toggle value="green" class="option-green" aria-label="Sounds good">Sounds good</mat-button-toggle>
+        <mat-button-toggle value="gray" class="option-gray" aria-label="Prefer not">Prefer not</mat-button-toggle>
+        <mat-button-toggle value="red" class="option-red" aria-label="Can't do">Can't do</mat-button-toggle>
+    </mat-button-toggle-group>
 </div>
 
+<div class="food-option">
+    <label class="label">
+    <div class="rectangle">$$$</div>
+    </label>
+    <mat-button-toggle-group class="button-toggle-group" (change)="toggleThreeDollar($event.value)">
+        <mat-button-toggle value="green" class="option-green" aria-label="Sounds good">Sounds good</mat-button-toggle>
+        <mat-button-toggle value="gray" class="option-gray" aria-label="Prefer not">Prefer not</mat-button-toggle>
+        <mat-button-toggle value="red" class="option-red" aria-label="Can't do">Can't do</mat-button-toggle>
+    </mat-button-toggle-group>
+</div>
 
-<button (click)="submit()" [disabled]="submitted">Submit Vote</button>
-<button (click)="openResults()">View Results</button>
+<div class="food-option">
+    <label class="label">
+    <div class="rectangle">$$$$</div>
+    </label>
+    <mat-button-toggle-group class="button-toggle-group" (change)="toggleFourDollar($event.value)">
+        <mat-button-toggle value="green" class="option-green" aria-label="Sounds good">Sounds good</mat-button-toggle>
+        <mat-button-toggle value="gray" class="option-gray" aria-label="Prefer not">Prefer not</mat-button-toggle>
+        <mat-button-toggle value="red" class="option-red" aria-label="Can't do">Can't do</mat-button-toggle>
+    </mat-button-toggle-group>
+</div>
+
+<h3>Select Your Dietary Restrictions</h3>
+
+<div *ngIf="glutenfree" class="food-option">
+    <div class="label">
+      <div class="rectangle">Gluten Free</div>
+    </div>
+    <mat-button-toggle-group class="button-toggle-group" (change)="toggleGlutenFree($event.value)">
+      <mat-button-toggle value="green" class="option-green" aria-label="Sounds good">Sounds good</mat-button-toggle>
+      <mat-button-toggle value="gray" class="option-gray" aria-label="Prefer not">Prefer not</mat-button-toggle>
+      <mat-button-toggle value="red" class="option-red" aria-label="Can't do">Can't do</mat-button-toggle>
+    </mat-button-toggle-group>
+  </div>
+  
+  <div *ngIf="halal" class="food-option">
+    <div class="label">
+      <div class="rectangle">Halal</div>
+    </div>
+    <mat-button-toggle-group class="button-toggle-group" (change)="toggleHalal($event.value)">
+      <mat-button-toggle value="green" class="option-green" aria-label="Sounds good">Sounds good</mat-button-toggle>
+      <mat-button-toggle value="gray" class="option-gray" aria-label="Prefer not">Prefer not</mat-button-toggle>
+      <mat-button-toggle value="red" class="option-red" aria-label="Can't do">Can't do</mat-button-toggle>
+    </mat-button-toggle-group>
+  </div>
+  
+  <div *ngIf="vegetarian" class="food-option">
+    <div class="label">
+      <div class="rectangle">Vegetarian</div>
+    </div>
+    <mat-button-toggle-group class="button-toggle-group" (change)="toggleVegetarian($event.value)">
+      <mat-button-toggle value="green" class="option-green" aria-label="Sounds good">Sounds good</mat-button-toggle>
+      <mat-button-toggle value="gray" aria-label="Prefer not">Prefer not</mat-button-toggle>
+      <mat-button-toggle value="red" aria-label="Can't do">Can't do</mat-button-toggle>
+    </mat-button-toggle-group>
+  </div>
+  
+  <div *ngIf="vegan" class="food-option">
+    <div class="label">
+      <div class="rectangle">Vegan</div>
+    </div>
+    <mat-button-toggle-group class="button-toggle-group" (change)="toggleVegan($event.value)">
+      <mat-button-toggle value="green" class="option-green" aria-label="Sounds good">Sounds good</mat-button-toggle>
+      <mat-button-toggle value="gray" aria-label="Prefer not">Prefer not</mat-button-toggle>
+      <mat-button-toggle value="red" aria-label="Can't do">Can't do</mat-button-toggle>
+    </mat-button-toggle-group>
+  </div>
+
+
+<h3>Choose Cuisine Types</h3>
+
+<div *ngIf="american" class="food-option">
+    <div class="label">
+      <div class="rectangle">American</div>
+    </div>
+    <mat-button-toggle-group class="button-toggle-group" (change)="toggleAmerican($event.value)">
+      <mat-button-toggle value="green" class="option-green" aria-label="Sounds good">Sounds good</mat-button-toggle>
+      <mat-button-toggle value="gray" class="option-gray" aria-label="Prefer not">Prefer not</mat-button-toggle>
+      <mat-button-toggle value="red" class="option-red" aria-label="Can't do">Can't do</mat-button-toggle>
+    </mat-button-toggle-group>
+  </div>
+  
+  <div *ngIf="bar" class="food-option">
+    <div class="label">
+      <div class="rectangle">Bar</div>
+    </div>
+    <mat-button-toggle-group class="button-toggle-group" (change)="toggleBar($event.value)">
+      <mat-button-toggle value="green" class="option-green" aria-label="Sounds good">Sounds good</mat-button-toggle>
+      <mat-button-toggle value="gray" class="option-gray" aria-label="Prefer not">Prefer not</mat-button-toggle>
+      <mat-button-toggle value="red" aria-label="Can't do">Can't do</mat-button-toggle>
+    </mat-button-toggle-group>
+  </div>
+  
+  <div *ngIf="breakfast" class="food-option">
+    <div class="label">
+      <div class="rectangle">Breakfast</div>
+    </div>
+    <mat-button-toggle-group class="button-toggle-group" (change)="toggleBreakfast($event.value)">
+      <mat-button-toggle value="green" class="option-green" aria-label="Sounds good">Sounds good</mat-button-toggle>
+      <mat-button-toggle value="gray" class="option-gray" aria-label="Prefer not">Prefer not</mat-button-toggle>
+      <mat-button-toggle value="red" aria-label="Can't do">Can't do</mat-button-toggle>
+    </mat-button-toggle-group>
+  </div>
+  
+  <div *ngIf="burgers" class="food-option">
+    <div class="label">
+      <div class="rectangle">Burgers</div>
+    </div>
+    <mat-button-toggle-group class="button-toggle-group" (change)="toggleBurgers($event.value)">
+      <mat-button-toggle value="green" class="option-green" aria-label="Sounds good">Sounds good</mat-button-toggle>
+      <mat-button-toggle value="gray" aria-label="Prefer not">Prefer not</mat-button-toggle>
+      <mat-button-toggle value="red" aria-label="Can't do">Can't do</mat-button-toggle>
+    </mat-button-toggle-group>
+  </div>
+  
+  <div *ngIf="cafe" class="food-option">
+    <div class="label">
+      <div class="rectangle">Cafe</div>
+    </div>
+    <mat-button-toggle-group class="button-toggle-group" (change)="toggleCafe($event.value)">
+      <mat-button-toggle value="green" class="option-green" aria-label="Sounds good">Sounds good</mat-button-toggle>
+      <mat-button-toggle value="gray" aria-label="Prefer not">Prefer not</mat-button-toggle>
+      <mat-button-toggle value="red" aria-label="Can't do">Can't do</mat-button-toggle>
+    </mat-button-toggle-group>
+  </div>
+
+  <div *ngIf="chickenwings" class="food-option">
+    <div class="label">
+      <div class="rectangle">Chicken Wings</div>
+    </div>
+    <mat-button-toggle-group class="button-toggle-group" (change)="toggleChickenWings($event.value)">
+      <mat-button-toggle value="green" class="option-green" aria-label="Sounds good">Sounds good</mat-button-toggle>
+      <mat-button-toggle value="gray" class="option-gray" aria-label="Prefer not">Prefer not</mat-button-toggle>
+      <mat-button-toggle value="red" class="option-red" aria-label="Can't do">Can't do</mat-button-toggle>
+    </mat-button-toggle-group>
+  </div>
+  
+  <div *ngIf="chinese" class="food-option">
+    <div class="label">
+      <div class="rectangle">Chinese</div>
+    </div>
+    <mat-button-toggle-group class="button-toggle-group" (change)="toggleChinese($event.value)">
+      <mat-button-toggle value="green" class="option-green" aria-label="Sounds good">Sounds good</mat-button-toggle>
+      <mat-button-toggle value="gray" class="option-gray" aria-label="Prefer not">Prefer not</mat-button-toggle>
+      <mat-button-toggle value="red" class="option-red" aria-label="Can't do">Can't do</mat-button-toggle>
+    </mat-button-toggle-group>
+  </div>
+  
+  <div *ngIf="diner" class="food-option">
+    <div class="label">
+      <div class="rectangle">Diner</div>
+    </div>
+    <mat-button-toggle-group class="button-toggle-group" (change)="toggleDiner($event.value)">
+      <mat-button-toggle value="green" class="option-green" aria-label="Sounds good">Sounds good</mat-button-toggle>
+      <mat-button-toggle value="gray" class="option-gray" aria-label="Prefer not">Prefer not</mat-button-toggle>
+      <mat-button-toggle value="red" class="option-red" aria-label="Can't do">Can't do</mat-button-toggle>
+    </mat-button-toggle-group>
+  </div>
+  
+  <div *ngIf="fastfood" class="food-option">
+    <div class="label">
+      <div class="rectangle">Fast Food</div>
+    </div>
+    <mat-button-toggle-group class="button-toggle-group" (change)="toggleFastFood($event.value)">
+      <mat-button-toggle value="green" class="option-green" aria-label="Sounds good">Sounds good</mat-button-toggle>
+      <mat-button-toggle value="gray" aria-label="Prefer not">Prefer not</mat-button-toggle>
+      <mat-button-toggle value="red" aria-label="Can't do">Can't do</mat-button-toggle>
+    </mat-button-toggle-group>
+  </div>
+  
+  <div *ngIf="fishandchips" class="food-option">
+    <div class="label">
+      <div class="rectangle">Fish and Chips</div>
+    </div>
+    <mat-button-toggle-group class="button-toggle-group" (change)="toggleFishAndChips($event.value)">
+      <mat-button-toggle value="green" class="option-green" aria-label="Sounds good">Sounds good</mat-button-toggle>
+      <mat-button-toggle value="gray" aria-label="Prefer not">Prefer not</mat-button-toggle>
+      <mat-button-toggle value="red" aria-label="Can't do">Can't do</mat-button-toggle>
+    </mat-button-toggle-group>
+  </div>
+
+  <div *ngIf="french" class="food-option">
+    <div class="label">
+      <div class="rectangle">French</div>
+    </div>
+    <mat-button-toggle-group class="button-toggle-group" (change)="toggleFrench($event.value)">
+      <mat-button-toggle value="green" class="option-green" aria-label="Sounds good">Sounds good</mat-button-toggle>
+      <mat-button-toggle value="gray" class="option-gray" aria-label="Prefer not">Prefer not</mat-button-toggle>
+      <mat-button-toggle value="red" class="option-red" aria-label="Can't do">Can't do</mat-button-toggle>
+    </mat-button-toggle-group>
+  </div>
+  
+  <div *ngIf="indian" class="food-option">
+    <div class="label">
+      <div class="rectangle">Indian</div>
+    </div>
+    <mat-button-toggle-group class="button-toggle-group" (change)="toggleIndian($event.value)">
+      <mat-button-toggle value="green" class="option-green" aria-label="Sounds good">Sounds good</mat-button-toggle>
+      <mat-button-toggle value="gray" class="option-gray" aria-label="Prefer not">Prefer not</mat-button-toggle>
+      <mat-button-toggle value="red" class="option-red" aria-label="Can't do">Can't do</mat-button-toggle>
+    </mat-button-toggle-group>
+  </div>
+  
+  <div *ngIf="italian" class="food-option">
+    <div class="label">
+      <div class="rectangle">Italian</div>
+    </div>
+    <mat-button-toggle-group class="button-toggle-group" (change)="toggleItalian($event.value)">
+      <mat-button-toggle value="green" class="option-green" aria-label="Sounds good">Sounds good</mat-button-toggle>
+      <mat-button-toggle value="gray" class="option-gray" aria-label="Prefer not">Prefer not</mat-button-toggle>
+      <mat-button-toggle value="red" class="option-red" aria-label="Can't do">Can't do</mat-button-toggle>
+    </mat-button-toggle-group>
+  </div>
+  
+  <div *ngIf="japanese" class="food-option">
+    <div class="label">
+      <div class="rectangle">Japanese</div>
+    </div>
+    <mat-button-toggle-group class="button-toggle-group" (change)="toggleJapanese($event.value)">
+      <mat-button-toggle value="green" class="option-green" aria-label="Sounds good">Sounds good</mat-button-toggle>
+      <mat-button-toggle value="gray" class="option-gray" aria-label="Prefer not">Prefer not</mat-button-toggle>
+      <mat-button-toggle value="red" aria-label="Can't do">Can't do</mat-button-toggle>
+    </mat-button-toggle-group>
+  </div>
+
+  <div *ngIf="korean" class="food-option">
+    <div class="label">
+      <div class="rectangle">Korean</div>
+    </div>
+    <mat-button-toggle-group class="button-toggle-group" (change)="toggleKorean($event.value)">
+      <mat-button-toggle value="green" class="option-green" aria-label="Sounds good">Sounds good</mat-button-toggle>
+      <mat-button-toggle value="gray" class="option-gray" aria-label="Prefer not">Prefer not</mat-button-toggle>
+      <mat-button-toggle value="red" class="option-red" aria-label="Can't do">Can't do</mat-button-toggle>
+    </mat-button-toggle-group>
+  </div>
+  
+  <div *ngIf="mediterranean" class="food-option">
+    <div class="label">
+      <div class="rectangle">Mediterranean</div>
+    </div>
+    <mat-button-toggle-group class="button-toggle-group" (change)="toggleMediterranean($event.value)">
+      <mat-button-toggle value="green" class="option-green" aria-label="Sounds good">Sounds good</mat-button-toggle>
+      <mat-button-toggle value="gray" class="option-gray" aria-label="Prefer not">Prefer not</mat-button-toggle>
+      <mat-button-toggle value="red" class="option-red" aria-label="Can't do">Can't do</mat-button-toggle>
+    </mat-button-toggle-group>
+  </div>
+  
+  <div *ngIf="middleeastern" class="food-option">
+    <div class="label">
+      <div class="rectangle">Middle Eastern</div>
+    </div>
+    <mat-button-toggle-group class="button-toggle-group" (change)="toggleMiddleEastern($event.value)">
+      <mat-button-toggle value="green" class="option-green" aria-label="Sounds good">Sounds good</mat-button-toggle>
+      <mat-button-toggle value="gray" class="option-gray" aria-label="Prefer not">Prefer not</mat-button-toggle>
+      <mat-button-toggle value="red" class="option-red" aria-label="Can't do">Can't do</mat-button-toggle>
+    </mat-button-toggle-group>
+  </div>
+  
+  <div *ngIf="mexican" class="food-option">
+    <div class="label">
+      <div class="rectangle">Mexican</div>
+    </div>
+    <mat-button-toggle-group class="button-toggle-group" (change)="toggleMexican($event.value)">
+      <mat-button-toggle value="green" class="option-green" aria-label="Sounds good">Sounds good</mat-button-toggle>
+      <mat-button-toggle value="gray" class="option-gray" aria-label="Prefer not">Prefer not</mat-button-toggle>
+      <mat-button-toggle value="red" aria-label="Can't do">Can't do</mat-button-toggle>
+    </mat-button-toggle-group>
+  </div>
+
+  <div *ngIf="noodles" class="food-option">
+    <div class="label">
+      <div class="rectangle">Noodles</div>
+    </div>
+    <mat-button-toggle-group class="button-toggle-group" (change)="toggleNoodles($event.value)">
+      <mat-button-toggle value="green" class="option-green" aria-label="Sounds good">Sounds good</mat-button-toggle>
+      <mat-button-toggle value="gray" class="option-gray" aria-label="Prefer not">Prefer not</mat-button-toggle>
+      <mat-button-toggle value="red" class="option-red" aria-label="Can't do">Can't do</mat-button-toggle>
+    </mat-button-toggle-group>
+  </div>
+  
+  <div *ngIf="pizza" class="food-option">
+    <div class="label">
+      <div class="rectangle">Pizza</div>
+    </div>
+    <mat-button-toggle-group class="button-toggle-group" (change)="togglePizza($event.value)">
+      <mat-button-toggle value="green" class="option-green" aria-label="Sounds good">Sounds good</mat-button-toggle>
+      <mat-button-toggle value="gray" class="option-gray" aria-label="Prefer not">Prefer not</mat-button-toggle>
+      <mat-button-toggle value="red" class="option-red" aria-label="Can't do">Can't do</mat-button-toggle>
+    </mat-button-toggle-group>
+  </div>
+  
+  <div *ngIf="salad" class="food-option">
+    <div class="label">
+      <div class="rectangle">Salad</div>
+    </div>
+    <mat-button-toggle-group class="button-toggle-group" (change)="toggleSalad($event.value)">
+      <mat-button-toggle value="green" class="option-green" aria-label="Sounds good">Sounds good</mat-button-toggle>
+      <mat-button-toggle value="gray" class="option-gray" aria-label="Prefer not">Prefer not</mat-button-toggle>
+      <mat-button-toggle value="red" class="option-red" aria-label="Can't do">Can't do</mat-button-toggle>
+    </mat-button-toggle-group>
+  </div>
+  
+  <div *ngIf="sandwiches" class="food-option">
+    <div class="label">
+      <div class="rectangle">Sandwiches</div>
+    </div>
+    <mat-button-toggle-group class="button-toggle-group" (change)="toggleSandwiches($event.value)">
+      <mat-button-toggle value="green" class="option-green" aria-label="Sounds good">Sounds good</mat-button-toggle>
+      <mat-button-toggle value="gray" class="option-gray" aria-label="Prefer not">Prefer not</mat-button-toggle>
+      <mat-button-toggle value="red" aria-label="Can't do">Can't do</mat-button-toggle>
+    </mat-button-toggle-group>
+  </div>
+
+  <div *ngIf="seafood" class="food-option">
+    <div class="label">
+      <div class="rectangle">Seafood</div>
+    </div>
+    <mat-button-toggle-group class="button-toggle-group" (change)="toggleSeafood($event.value)">
+      <mat-button-toggle value="green" class="option-green" aria-label="Sounds good">Sounds good</mat-button-toggle>
+      <mat-button-toggle value="gray" class="option-gray" aria-label="Prefer not">Prefer not</mat-button-toggle>
+      <mat-button-toggle value="red" class="option-red" aria-label="Can't do">Can't do</mat-button-toggle>
+    </mat-button-toggle-group>
+  </div>
+  
+  <div *ngIf="steakhouse" class="food-option">
+    <div class="label">
+      <div class="rectangle">Steakhouse</div>
+    </div>
+    <mat-button-toggle-group class="button-toggle-group" (change)="toggleSteakhouse($event.value)">
+      <mat-button-toggle value="green" class="option-green" aria-label="Sounds good">Sounds good</mat-button-toggle>
+      <mat-button-toggle value="gray" class="option-gray" aria-label="Prefer not">Prefer not</mat-button-toggle>
+      <mat-button-toggle value="red" class="option-red" aria-label="Can't do">Can't do</mat-button-toggle>
+    </mat-button-toggle-group>
+  </div>
+  
+  <div *ngIf="thai" class="food-option">
+    <div class="label">
+      <div class="rectangle">Thai</div>
+    </div>
+    <mat-button-toggle-group class="button-toggle-group" (change)="toggleThai($event.value)">
+      <mat-button-toggle value="green" class="option-green" aria-label="Sounds good">Sounds good</mat-button-toggle>
+      <mat-button-toggle value="gray" class="option-gray" aria-label="Prefer not">Prefer not</mat-button-toggle>
+      <mat-button-toggle value="red" class="option-red" aria-label="Can't do">Can't do</mat-button-toggle>
+    </mat-button-toggle-group>
+  </div>
+
+  <div *ngIf="vietnamese" class="food-option">
+    <div class="label">
+      <div class="rectangle">Vietnamese</div>
+    </div>
+    <mat-button-toggle-group class="button-toggle-group" (change)="toggleVietnamese($event.value)">
+      <mat-button-toggle value="green" class="option-green" aria-label="Sounds good">Sounds good</mat-button-toggle>
+      <mat-button-toggle value="gray" class="option-gray" aria-label="Prefer not">Prefer not</mat-button-toggle>
+      <mat-button-toggle value="red" class="option-red" aria-label="Can't do">Can't do</mat-button-toggle>
+    </mat-button-toggle-group>
+  </div>
+
+
+
+
+
+<div class="buttons-container">
+    <button (click)="submit()" [disabled]="submitted">{{ submitButtonText }}</button>
+    <button (click)="openResults()">View Results</button>
+  </div>
 <div *ngIf="errorMessage">{{ errorMessage }}</div>
+
+
+<!--
+<div *ngIf="mexican" class="food-option">
+  <div class="label">
+    <div class="rectangle">Mexican</div>
+  </div>
+  <mat-button-toggle-group class="button-toggle-group" (change)="toggleMexican($event.value)">
+    <mat-button-toggle value="green" class="option-green" aria-label="Sounds good">Sounds good</mat-button-toggle>
+    <mat-button-toggle value="gray" class="option-gray" aria-label="Prefer not">Prefer not</mat-button-toggle>
+    <mat-button-toggle value="red" class="option-red" aria-label="Can't do">Can't do</mat-button-toggle>
+  </mat-button-toggle-group>
+</div>
+
+<div *ngIf="seafood" class="food-option">
+  <div class="label">
+    <div class="rectangle">Seafood</div>
+  </div>
+  <mat-button-toggle-group class="button-toggle-group" (change)="toggleSeafood($event.value)">
+    <mat-button-toggle value="green" class="option-green" aria-label="Sounds good">Sounds good</mat-button-toggle>
+    <mat-button-toggle value="gray" class="option-gray" aria-label="Prefer not">Prefer not</mat-button-toggle>
+    <mat-button-toggle value="red" class="option-red" aria-label="Can't do">Can't do</mat-button-toggle>
+  </mat-button-toggle-group>
+</div>
+-->

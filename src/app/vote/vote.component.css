@@ -1,32 +1,95 @@
-input[type="checkbox"] {
-    width: 20px;
-    height: 20px;
-    position: relative;
-    margin-right: 10px;
-    border: 2px solid #ddd;
-    border-radius: 50%;
-  }
-  
-  input[type="checkbox"]:checked {
-    background-color: #2196f3;
-    border-color: #2196f3;
-  }
-  
-  .label {
-    font-size: 16px;
-    margin-right: 10px;
-  }
-  
-  .rectangle {
-    width: 200px;
-    height: 30px;
-    background-color: #ddd;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 16px;
-    font-weight: bold;
-    color: #333;
-    margin-right: 10px;
-  }
-  
+.label {
+  font-size: 16px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.rectangle {
+  width: 200px;
+  height: 30px;
+  background-color: #ddd;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+.food-option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.button-toggle-group {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.option-green.mat-button-toggle-checked {
+  background-color: lightgreen;
+}
+
+.option-gray.mat-button-toggle-checked {
+  background-color: lightpink;
+}
+
+.option-red.mat-button-toggle-checked {
+  background-color: lightcoral;
+}
+
+
+h1, h3, button, form {
+  margin: 20px 0;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
+h1 {
+  font-family: 'Georgia';
+  color: #1e2c4a;
+  font-size: xx-large;
+  font-weight: bolder;
+}
+
+h3 {
+  font-family: 'Georgia';
+  color: #1e2c4a;
+  font-size: large;
+  font-weight: bolder;
+}
+
+button {
+  background-color: #1e2c4a;
+  border: none;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  font-family: 'Georgia';
+  font-weight: bolder;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
+button:hover {
+  background-color: #fff;
+  color: #1e2c4a;
+  font-family: 'Georgia';
+  font-weight: bolder;
+}
+
+.buttons-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}

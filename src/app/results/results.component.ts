@@ -4,6 +4,8 @@ import { Title } from '@angular/platform-browser'
 import { FormBuilder } from '@angular/forms'
 import { HttpClient } from '@angular/common/http'
 import { CommonModule } from '@angular/common';
+import { HttpParams } from '@angular/common/http';
+
 
 interface eventres{
   id: string,
@@ -74,17 +76,6 @@ export class ResultsComponent {
       console.log(this.res2.zip)
       this.zip = this.res2.zip
     
-
-
-    const options: RequestInit = {
-      method: 'GET',
-      headers: {
-        'accept': 'application/json',
-        'Authorization': 'Bearer -Lt6PmO3YF3-nYzu9d2ymy_l2Bb1bDtKbJF1X6teNv2ncfdkDWxA7YLaOVqw8twyvjY7VES58_Le25v9n0Hw5Wmf9TIWLvboVXZge0g8m-5D_8jC3S0968ZD9mwaZHYx',
-        'Content-Type': 'application/json'
-        }
-      }
-
     let food =""
     if(this.mexican > this.seafood){
       food = "mexican"
@@ -95,7 +86,14 @@ export class ResultsComponent {
     console.log(this.zip)
     console.log(food)
 
-    fetch(`https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=${this.zip}&term=restaurants&radius=8000&sort_by=best_match&limit=20&categories=${food}`, options)
+    const options: RequestInit = {
+      method: 'GET',
+      body: `location=${this.zip}&term=restaurants&radius=8000&sort_by=best_match&limit=20&categories=${food}`
+    };
+
+    
+    
+    fetch(`https://groupeats.net/restaurants`, options)
       .then(response => response.json())
       .then(data => {
         //this.output2 = data.businesses[0].id
