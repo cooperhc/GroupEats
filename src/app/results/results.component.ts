@@ -372,18 +372,30 @@ export class ResultsComponent {
 
     if(this.dietary[0].value > 0){
       halal = this.dietary[0].key
+      if(halal==="glutenfree"){
+        halal="gluten_free"
+      }
       dietary1 = `&categories=${halal}`
     }
     if(this.dietary[1].value > 0){
       glutenfree = this.dietary[1].key
+      if(glutenfree==="glutenfree"){
+        glutenfree="gluten_free"
+      }
       dietary2 = `&categories=${glutenfree}`
     }
     if(this.dietary[2].value > 0){
       vegetarian = this.dietary[2].key
+      if(vegetarian==="glutenfree"){
+        vegetarian="gluten_free"
+      }
       dietary3 = `&categories=${vegetarian}`
     }
     if(this.dietary[3].value > 0){
       vegan = this.dietary[3].key
+      if(vegan==="glutenfree"){
+        vegan="gluten_free"
+      }
       dietary4 = `&categories=${vegan}`
     }
 
@@ -428,10 +440,59 @@ export class ResultsComponent {
       this.topvalues[1].key = "indpak"
     }
 
+    if(this.topvalues[0].key === "cafe"){
+      this.topvalues[0].key = "cafes"
+    }
+    
+    if(this.topvalues[1].key === "cafe"){
+      this.topvalues[1].key = "cafes"
+    }
+
+    if(this.topvalues[0].key === "cafe"){
+      this.topvalues[0].key = "cafes"
+    }
+    
+    if(this.topvalues[1].key === "cafe"){
+      this.topvalues[1].key = "cafes"
+    }
+
+    if(this.topvalues[0].key === "chickenwings"){
+      this.topvalues[0].key = "chicken_wings"
+    }
+    
+    if(this.topvalues[1].key === "chickenwings"){
+      this.topvalues[1].key = "chicken_wings"
+    }
+
+    if(this.topvalues[0].key === "bar"){
+      this.topvalues[0].key = "bars"
+    }
+    
+    if(this.topvalues[1].key === "bar"){
+      this.topvalues[1].key = "bars"
+    }
+
+    if(this.topvalues[0].key === "breakfast"){
+      this.topvalues[0].key = "breakfast_bunch"
+    }
+    
+    if(this.topvalues[1].key === "breakfast"){
+      this.topvalues[1].key = "breakfast_bunch"
+    }
+
+    if(this.topvalues[0].key === "steakhouse"){
+      this.topvalues[0].key = "steak"
+    }
+    
+    if(this.topvalues[1].key === "steakhouse"){
+      this.topvalues[1].key = "steak"
+    }
+
     console.log(dietary1)
     console.log(dietary2)
     console.log(dietary3)
     console.log(dietary4)
+    
     let test = `https://groupeats.net/restaurants/location=${this.zip}&term=restaurants&radius=8000&sort_by=best_match&limit=20&categories=${this.topvalues[0].key}%2C${this.topvalues[1].key}&price=${price}${dietary1}${dietary2}${dietary3}${dietary4}`
     fetch(`https://groupeats.net/restaurants/location=${this.zip}&term=restaurants&radius=8000&sort_by=best_match&limit=20&categories=${this.topvalues[0].key}%2C${this.topvalues[1].key}&price=${price}${dietary1}${dietary2}${dietary3}${dietary4}`)
       .then(response => response.json())
