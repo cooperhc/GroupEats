@@ -418,18 +418,22 @@ export class ResultsComponent {
 
     if(this.topvalues[0].key === "fastfood"){
       this.topvalues[0].key = "hotdogs"
+      this.topC = "Fast food"
     }
     
     if(this.topvalues[1].key === "fastfood"){
       this.topvalues[1].key = "hotdogs"
+      this.secC = "Fast food"
     }
 
     if(this.topvalues[0].key === "fishandchips"){
       this.topvalues[0].key = "fishnchips"
+      this.topC = "Fish and chips"
     }
     
     if(this.topvalues[1].key === "fishandchips"){
       this.topvalues[1].key = "fishnchips"
+      this.secC = "Fish and chips"
     }
 
     if(this.topvalues[0].key === "indian"){
@@ -458,10 +462,12 @@ export class ResultsComponent {
 
     if(this.topvalues[0].key === "chickenwings"){
       this.topvalues[0].key = "chicken_wings"
+      this.topC = "Chicken wings"
     }
     
     if(this.topvalues[1].key === "chickenwings"){
       this.topvalues[1].key = "chicken_wings"
+      this.secC = "Chicken wings"
     }
 
     if(this.topvalues[0].key === "bar"){
@@ -473,11 +479,11 @@ export class ResultsComponent {
     }
 
     if(this.topvalues[0].key === "breakfast"){
-      this.topvalues[0].key = "breakfast_bunch"
+      this.topvalues[0].key = "breakfast_brunch"
     }
     
     if(this.topvalues[1].key === "breakfast"){
-      this.topvalues[1].key = "breakfast_bunch"
+      this.topvalues[1].key = "breakfast_brunch"
     }
 
     if(this.topvalues[0].key === "steakhouse"){
@@ -487,6 +493,16 @@ export class ResultsComponent {
     if(this.topvalues[1].key === "steakhouse"){
       this.topvalues[1].key = "steak"
     }
+
+    if(this.topvalues[0].key === "middleeastern"){
+      this.topC = "Middle Eastern"
+    }
+    
+    if(this.topvalues[1].key === "middleeastern"){
+      this.secC = "Middle Eastern"
+    }
+
+    //logic for creating message that dietary restrictions have been applied?
 
     console.log(dietary1)
     console.log(dietary2)
