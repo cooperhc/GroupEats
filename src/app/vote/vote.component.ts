@@ -127,6 +127,10 @@ export class VoteComponent {
   glutenfree = false;
   vegetarian = false;
   vegan = false;
+  onedollar = false;
+  twodollar = false;
+  threedollar = false;
+  fourdollar = false;
 
   errorMessage = ""
   formInfo = {
@@ -167,6 +171,8 @@ export class VoteComponent {
   }  
   submitButtonText = 'Submit Vote'
 
+
+  //cursed code start
   toggleSeafood(color: string): void{
     if(color==='green'){
       this.formInfo.seafood = "1"
@@ -609,6 +615,7 @@ export class VoteComponent {
     }
     console.log(this.formInfo.twodollar);
   }
+  //cursed code end
 
   
 
@@ -676,6 +683,10 @@ export class VoteComponent {
       if(this.res.vegetarian){ this.vegetarian = true }
       if(this.res.halal){ this.halal = true }
       if(this.res.glutenfree){ this.glutenfree = true }
+      if(this.res.onedollar){ this.onedollar = true }
+      if(this.res.twodollar){ this.twodollar = true }
+      if(this.res.threedollar){ this.threedollar = true }
+      if(this.res.fourdollar){ this.fourdollar = true }
     })
   }
 

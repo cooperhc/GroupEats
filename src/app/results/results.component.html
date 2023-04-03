@@ -1,31 +1,16 @@
 <h1>GroupEats</h1>
-<h3>View Results</h3>
+
+<h3>Most Votes: {{topC | titlecase}} with {{topCV}} votes</h3>
+<h3>Second Most Votes: {{secC | titlecase}} with {{secCV}} votes</h3>
+<h3>Recommended Restaurants</h3>
 <!--<button (click)="generateResults()" [disabled]="resultsGenerated">Generate Results</button>-->
 
-<div class="restaurant-box">
-    <h2>{{ restaurant1.name }}</h2>
-    <img src="{{ restaurant1.image_url }}" alt="{{ restaurant1.name }}">
-    <p>Price: {{ restaurant1.price }}</p>
-    <p>Rating: {{ restaurant1.rating }}/5</p>
-</div>
-  
-<div class="restaurant-box">
-    <h2>{{ restaurant2.name }}</h2>
-    <img src="{{ restaurant2.image_url }}" alt="{{ restaurant2.name }}">
-    <p>Price: {{ restaurant2.price }}</p>
-    <p>Rating: {{ restaurant2.rating }}/5</p>
-</div>
-
-<div class="restaurant-box">
-    <h2>{{ restaurant3.name }}</h2>
-    <img src="{{ restaurant3.image_url }}" alt="{{ restaurant3.name }}">
-    <p>Price: {{ restaurant3.price }}</p>
-    <p>Rating: {{ restaurant3.rating }}/5</p>
-</div>
-
-<div class="restaurant-box">
-    <h2>{{ restaurant4.name }}</h2>
-    <img src="{{ restaurant4.image_url }}" alt="{{ restaurant4.name }}">
-    <p>Price: {{ restaurant4.price }}</p>
-    <p>Rating: {{ restaurant4.rating }}/5</p>
+<div *ngFor="let restaurant of restaurants" class="restaurant-box">
+    <h3>{{ restaurant.name }}</h3>
+    <img src="{{ restaurant.image_url }}" alt="{{ restaurant.name }}">
+    <p>Price: {{ restaurant.price }}</p>
+    <p>Rating: {{ restaurant.rating }}/5</p>
+    <p>Categories:</p> <h6 *ngFor="let category of restaurant.categories">{{ category.title }}</h6>
+    <p><a href="{{ restaurant.id }}" target="_blank">Google Map Directions</a></p>
+    <p>More Info: <a href="{{ restaurant.url }}" target="_blank">Yelp Link</a></p>
 </div>

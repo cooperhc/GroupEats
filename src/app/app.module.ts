@@ -13,13 +13,16 @@ import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { ResultsComponent } from './results/results.component';
+import { TitleCasePipe } from '@angular/common';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     CreateFormComponent,
-    VoteComponent
+    VoteComponent, 
+    ResultsComponent
   ],
   imports: [
     HttpClientModule,
@@ -30,7 +33,8 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
     CommonModule,
     BrowserAnimationsModule,
     MatChipsModule,
-    MatButtonToggleModule
+    MatButtonToggleModule,
+    TitleCasePipe
   ],
 
   providers: [],

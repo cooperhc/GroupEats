@@ -31,14 +31,17 @@
 
 .option-green.mat-button-toggle-checked {
   background-color: lightgreen;
+  border-color: green;
 }
 
 .option-gray.mat-button-toggle-checked {
   background-color: lightpink;
+  border-color: pink;
 }
 
 .option-red.mat-button-toggle-checked {
   background-color: lightcoral;
+  
 }
 
 
@@ -93,3 +96,4 @@ button:hover {
   align-items: center;
   gap: 10px;
 }
+

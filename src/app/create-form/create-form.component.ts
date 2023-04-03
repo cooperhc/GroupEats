@@ -20,6 +20,7 @@ export class CreateFormComponent {
   id = ""
   eventCreated = false
   errorMessage = ""
+  eventMessage = "Create Event"
 
 
   zipForm = this.formBuilder.group({
@@ -200,6 +201,7 @@ export class CreateFormComponent {
       this.id = response[0].id
     })
     this.eventCreated = true
+    this.eventMessage = "Event Created"
   }
 
   openEvent(): void{
