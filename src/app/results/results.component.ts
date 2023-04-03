@@ -151,6 +151,7 @@ export class ResultsComponent {
   res2: event = {created: "", id: "", last_updated: "", mexican: false, seafood: false, zip: 1}
   topC = ""
   secC = ""
+  numVotes = 0
   topCV = 0
   secCV = 0
   id = ""
@@ -176,6 +177,7 @@ export class ResultsComponent {
     this.http.get<eventres[]>(url).subscribe((response) => {
       console.log(response[0])
       console.log(response)
+      this.numVotes = response.length
 
       const findTopTwoValues = (results: { [key: string]: number }): { key: string; value: number }[] => {
         return Object.entries(results)
@@ -256,7 +258,7 @@ export class ResultsComponent {
         if (this.res.japanese as unknown as string === "-1") { this.results.japanese -= 1; }
         if (this.res.cafe as unknown as string === "-1") { this.results.cafe -= 1; }
         if (this.res.chickenwings as unknown as string === "-1") { this.results.chickenwings -= 1; }
-        if (this.res.vegan as unknown as string === "-1") { this.results.vegan -= 1; }
+        //if (this.res.vegan as unknown as string === "-1") { this.results.vegan -= 1; }
         if (this.res.vietnamese as unknown as string === "-1") { this.results.vietnamese -= 1; }
         if (this.res.french as unknown as string === "-1") { this.results.french -= 1; }
         if (this.res.diner as unknown as string === "-1") { this.results.diner -= 1; }
@@ -264,13 +266,13 @@ export class ResultsComponent {
         if (this.res.middleeastern as unknown as string === "-1") { this.results.middleeastern -= 1; }
         if (this.res.indian as unknown as string === "-1") { this.results.indian -= 1; }
         if (this.res.thai as unknown as string === "-1") { this.results.thai -= 1; }
-        if (this.res.vegetarian as unknown as string === "-1") { this.results.vegetarian -= 1; }
-        if (this.res.glutenfree as unknown as string === "-1") { this.results.glutenfree -= 1; }
+        //if (this.res.vegetarian as unknown as string === "-1") { this.results.vegetarian -= 1; }
+        //if (this.res.glutenfree as unknown as string === "-1") { this.results.glutenfree -= 1; }
         if (this.res.chinese as unknown as string === "-1") { this.results.chinese -= 1; }
         if (this.res.noodles as unknown as string === "-1") { this.results.noodles -= 1; }
         if (this.res.fishandchips as unknown as string === "-1") { this.results.fishandchips -= 1; }
         if (this.res.steakhouse as unknown as string === "-1") { this.results.steakhouse -= 1; }
-        if (this.res.halal as unknown as string === "-1") { this.results.halal -= 1; }
+        //if (this.res.halal as unknown as string === "-1") { this.results.halal -= 1; }
         if (this.res.onedollar as unknown as string === "x") { this.results.onedollar = -100; }
         if (this.res.twodollar as unknown as string === "x") { this.results.twodollar = -100; }
         if (this.res.threedollar as unknown as string === "x") { this.results.threedollar = -100; }
