@@ -310,13 +310,7 @@ export class ResultsComponent {
       this.topvalues = topTwoValues
       this.topdollar = findTopTwoDollarValues(this.results)
       this.dietary = findDietary(this.results)
-    }    
-    )
-    
-    
-
-
-    let url2 = `https://groupeats.net/events/${this.id}`
+      let url2 = `https://groupeats.net/events/${this.id}`
     this.http.get<event[]>(url2).subscribe((response) => {
       console.log(response[0])
       this.res2 = response[0]
@@ -357,7 +351,7 @@ export class ResultsComponent {
     } else if (this.topdollar.some(item => item.key === 'fourdollar')) {
       price = '4';
     } else {
-      price = '';
+      price = '1%2C2%2C3%2C4';
     }
     
     let halal = ""
@@ -410,6 +404,13 @@ export class ResultsComponent {
       
     console.log(this.output2)
       })
+    }    
+    )
+    
+    
+
+
+    
   }
 
   
