@@ -387,13 +387,52 @@ export class ResultsComponent {
       dietary4 = `&categories=${vegan}`
     }
 
+    //not matching with yelp API, need to clean up 
+    if(this.topvalues[0].key === "american"){
+      this.topvalues[0].key = "tradamerican"
+    }
     
+    if(this.topvalues[1].key === "american"){
+      this.topvalues[1].key = "tradamerican"
+    }
+
+    if(this.topvalues[0].key === "diner"){
+      this.topvalues[0].key = "diners"
+    }
+    
+    if(this.topvalues[1].key === "diner"){
+      this.topvalues[1].key = "diners"
+    }
+
+    if(this.topvalues[0].key === "fastfood"){
+      this.topvalues[0].key = "hotdogs"
+    }
+    
+    if(this.topvalues[1].key === "fastfood"){
+      this.topvalues[1].key = "hotdogs"
+    }
+
+    if(this.topvalues[0].key === "fishandchips"){
+      this.topvalues[0].key = "fishnchips"
+    }
+    
+    if(this.topvalues[1].key === "fishandchips"){
+      this.topvalues[1].key = "fishnchips"
+    }
+
+    if(this.topvalues[0].key === "indian"){
+      this.topvalues[0].key = "indpak"
+    }
+    
+    if(this.topvalues[1].key === "indian"){
+      this.topvalues[1].key = "indpak"
+    }
 
     console.log(dietary1)
     console.log(dietary2)
     console.log(dietary3)
     console.log(dietary4)
-
+    let test = `https://groupeats.net/restaurants/location=${this.zip}&term=restaurants&radius=8000&sort_by=best_match&limit=20&categories=${this.topvalues[0].key}%2C${this.topvalues[1].key}&price=${price}${dietary1}${dietary2}${dietary3}${dietary4}`
     fetch(`https://groupeats.net/restaurants/location=${this.zip}&term=restaurants&radius=8000&sort_by=best_match&limit=20&categories=${this.topvalues[0].key}%2C${this.topvalues[1].key}&price=${price}${dietary1}${dietary2}${dietary3}${dietary4}`)
       .then(response => response.json())
       .then(data => {
