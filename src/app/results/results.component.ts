@@ -310,6 +310,12 @@ export class ResultsComponent {
       this.topvalues = topTwoValues
       this.topdollar = findTopTwoDollarValues(this.results)
       this.dietary = findDietary(this.results)
+      while(topTwoValues[0].value < 0){
+        topTwoValues[0].value += 100
+      }
+      while(topTwoValues[1].value < 0){
+        topTwoValues[1].value += 100
+      }
       let url2 = `https://groupeats.net/events/${this.id}`
     this.http.get<event[]>(url2).subscribe((response) => {
       console.log(response[0])
