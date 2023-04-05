@@ -5,3 +5,11 @@ html, body {
     background-color: #D9ECFF;
 }
 body { margin: 0; font-family: Roboto, "Germania", sans-serif; }
+
+.groupeats-link {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+
+  

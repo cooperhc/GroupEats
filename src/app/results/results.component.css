@@ -58,14 +58,14 @@
   
   h1 {
     font-family: 'Georgia';
-    color: #1e2c4a;
+    color: #2B2D42;
     font-size: xx-large;
     font-weight: bolder;
   }
 
   h6 {
     font-family: 'Georgia';
-    color: #1e2c4a;
+    color: #2B2D42;
     font-size: small;
     font-weight: bolder;
     padding: 0%;
@@ -75,22 +75,22 @@
   
   h3 {
     font-family: 'Georgia';
-    color: #1e2c4a;
+    color: #2B2D42;
     font-size: large;
     font-weight: bolder;
   }
 
   p {
     font-family: 'Georgia';
-    color: #1e2c4a;
+    color: #2B2D42;
     font-size: small;
     font-weight: bolder;
   }
   
   button {
-    background-color: #1e2c4a;
+    background-color: #2B2D42;
     border: none;
-    color: #fff;
+    color: #B1D2F1;
     padding: 10px 20px;
     border-radius: 4px;
     cursor: pointer;
@@ -106,8 +106,8 @@
   }
   
   button:hover {
-    background-color: #fff;
-    color: #1e2c4a;
+    background-color: #B1D2F1;
+    color: #2B2D42;
     font-family: 'Georgia';
     font-weight: bolder;
   }
@@ -124,7 +124,7 @@
     align-items: center;
 }
 
-.section-box {
+.restaurant-box {
   background-color: #B1D2F1;
   padding-bottom: 1px;
   padding-top: 1px;

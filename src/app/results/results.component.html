@@ -1,6 +1,6 @@
 <body>
-    <h1>GroupEats</h1>
-
+    <h1><a routerLink="/" class="groupeats-link">GroupEats</a></h1>
+    <div class="restaurant-box">
     <p>Most Votes: {{topC | titlecase}} with {{topCV}} votes</p>
     <p>Second Most Votes: {{secC | titlecase}} with {{secCV}} votes</p>
     <p>Total Number of Submissions: {{numVotes}}</p>
@@ -8,11 +8,14 @@
     <p *ngIf="glutenfree">A person has indicated they want {{glutenfree.replace('_', '-') | titlecase}}</p>
     <p *ngIf="vegan">A person has indicated they want {{vegan.replace('_', '-' | titlecase)}}</p>
     <p *ngIf="vegetarian">A person has indicated they want {{vegetarian.replace('_', '-') | titlecase}}</p>
+    </div>
     
     <h3>Recommended Restaurants</h3>
     <!--<button (click)="generateResults()" [disabled]="resultsGenerated">Generate Results</button>-->
     <ng-container *ngIf="short">
+
         <div *ngFor="let restaurant of Srestaurants" class="restaurant-box">
+        
             <h3>{{ restaurant.name }}</h3>
             <img src="{{ restaurant.image_url }}" alt="{{ restaurant.name }}">
             <p>Price: {{ restaurant.price }}</p>
@@ -27,6 +30,7 @@
     
     <ng-container *ngIf="long">
         <div *ngFor="let restaurant of restaurants" class="restaurant-box">
+        
             <h3>{{ restaurant.name }}</h3>
             <img src="{{ restaurant.image_url }}" alt="{{ restaurant.name }}">
             <p>Price: {{ restaurant.price }}</p>
