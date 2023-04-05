@@ -123,3 +123,13 @@
     justify-content: center;
     align-items: center;
 }
+
+.section-box {
+  background-color: #B1D2F1;
+  padding-bottom: 1px;
+  padding-top: 1px;
+  margin-bottom: 20px;
+  width: 300px;
+  margin-left: auto;
+  margin-right:auto;
+}  

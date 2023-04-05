@@ -1,4 +1,5 @@
 <h1>GroupEats</h1>
+<div class="section-box">
 <h3>Enter ZIP Code</h3>
 <form [formGroup]="zipForm">
     <label>
@@ -6,9 +7,10 @@
     <input type="text" formControlName="zip">
     </label>
 </form>
+</div>
   
   
-
+<div class="section-box">
 <h3>Choose Price Options</h3>
 
 <div class="option">
@@ -38,7 +40,8 @@
     <input type="checkbox" value="fourdollar">
     </label>
 </div>
-
+</div>
+<div class="section-box">
 <h3>Select Dietary Restrictions</h3>
 
 <div class="option">
@@ -67,8 +70,9 @@
     <div class="rectangle">Vegan</div>
     <input type="checkbox" value="vegan">
     </label>
-
-
+</div>
+</div>
+<div class="section-box">
 <h3>Choose Cuisine Options</h3>
 
 <div class="option">
@@ -259,7 +263,8 @@
     <input type="checkbox" value="vietnamese">
     </label>
 </div>
-
+</div>
+<div class="option">
 <button (click)="createEvent()" [disabled]="eventCreated">{{eventMessage}}</button>
 <button *ngIf="eventCreated && !linkCopied" (click)="copyLink()">Copy Code</button>
 <button *ngIf="eventCreated && linkCopied">Code Copied</button>
@@ -267,6 +272,7 @@
 <button *ngIf="eventCreated" (click)="openEvent()">Open Event To Vote, After Sharing Link</button>
 
 <div *ngIf="errorMessage">{{ errorMessage }}</div>
+</div>
 
   
   

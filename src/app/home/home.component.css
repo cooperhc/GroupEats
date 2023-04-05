@@ -1,6 +1,6 @@
 body {
     background-image: url("home.png");
-    background-color: beige;
+    background-color: #D9ECFF;
     background-repeat: no-repeat;
     width: 100vw;
     height: 100vh;
@@ -17,15 +17,15 @@ h1, button, form {
 
 h1 {
     font-family: 'Georgia';
-    color: #1e2c4a;
+    color: #2B2D42;
     font-size: xx-large;
     font-weight: bolder;
 }
   
 button {
-    background-color: #1e2c4a;
+    background-color: #2B2D42;
     border: none;
-    color: #fff;
+    color: #B1D2F1;
     padding: 10px 20px;
     border-radius: 4px;
     cursor: pointer;

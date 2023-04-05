@@ -22,34 +22,32 @@ input[type="checkbox"] {
   .rectangle {
     width: 200px;
     height: 30px;
-    background-color: #ddd;
+    background-color: #2B2D42;
     display: inline-flex;
     justify-content: center;
     align-items: center;
     font-size: 16px;
     font-weight: bold;
-    color: #333;
+    color: #D6A99A;
     margin-right: 10px;
   }
+
+  .section-box {
+    background-color: #B1D2F1;
+    padding-bottom: 1px;
+    padding-top: 1px;
+    margin-bottom: 20px;
+    width: 300px;
+    margin-left: auto;
+    margin-right:auto;
+  }  
   
   .label {
     font-size: 16px;
     margin-bottom: 10px;
     text-align: center;
   }
-  
-  .rectangle {
-    width: 200px;
-    height: 30px;
-    background-color: #ddd;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 16px;
-    font-weight: bold;
-    color: #333;
-  }
-  
+
   .option {
     display: flex;
     flex-direction: column;
@@ -99,9 +97,9 @@ input[type="checkbox"] {
   }
   
   button {
-    background-color: #1e2c4a;
+    background-color: #2B2D42;
     border: none;
-    color: #fff;
+    color: #B1D2F1;
     padding: 10px 20px;
     border-radius: 4px;
     cursor: pointer;
@@ -115,8 +113,8 @@ input[type="checkbox"] {
   }
   
   button:hover {
-    background-color: #fff;
-    color: #1e2c4a;
+    background-color: #B1D2F1;
+    color: #2B2D42;
     font-family: 'Georgia';
     font-weight: bolder;
   }
