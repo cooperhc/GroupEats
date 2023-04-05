@@ -23,7 +23,7 @@
         </div>
     </ng-container>
     
-    <button *ngIf="short" (click)="showMore()">Show more</button>
+    <button *ngIf="short" (click)="showMore()" class="show-more-button">Show more</button>
     
     <ng-container *ngIf="long">
         <div *ngFor="let restaurant of restaurants" class="restaurant-box">
