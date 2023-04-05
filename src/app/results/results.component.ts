@@ -71,6 +71,11 @@ export class ResultsComponent {
   topdollar: TopValue[] = []
   dietary: TopValue[] = []
 
+  halal = ""
+  glutenfree = ""
+  vegan = ""
+  vegetarian = ""
+
   results = {
     onedollar: 0,
     twodollar: 0,
@@ -362,10 +367,7 @@ export class ResultsComponent {
       price = '1%2C2%2C3%2C4';
     }
     
-    let halal = ""
-    let glutenfree = ""
-    let vegan = ""
-    let vegetarian = ""
+    
 
     let dietary1 = ``
     let dietary2 = ``
@@ -373,32 +375,36 @@ export class ResultsComponent {
     let dietary4 = ``
 
     if(this.dietary[0].value > 0){
-      halal = this.dietary[0].key
-      if(halal==="glutenfree"){
-        halal="gluten_free"
+      this.halal = this.dietary[0].key
+      if(this.halal==="glutenfree"){
+        this.halal="gluten_free"
       }
-      dietary1 = `&categories=${halal}`
+      //dietary1 = `&categories=${halal}`
+      dietary1 = `%2C${this.halal}`
     }
     if(this.dietary[1].value > 0){
-      glutenfree = this.dietary[1].key
-      if(glutenfree==="glutenfree"){
-        glutenfree="gluten_free"
+      this.glutenfree = this.dietary[1].key
+      if(this.glutenfree==="glutenfree"){
+        this.glutenfree="gluten_free"
       }
-      dietary2 = `&categories=${glutenfree}`
+      //dietary2 = `&categories=${glutenfree}`
+      dietary2 = `%2C${this.glutenfree}`
     }
     if(this.dietary[2].value > 0){
-      vegetarian = this.dietary[2].key
-      if(vegetarian==="glutenfree"){
-        vegetarian="gluten_free"
+      this.vegetarian = this.dietary[2].key
+      if(this.vegetarian==="glutenfree"){
+        this.vegetarian="gluten_free"
       }
-      dietary3 = `&categories=${vegetarian}`
+      //dietary3 = `&categories=${vegetarian}`
+      dietary3 = `%2C${this.vegetarian}`
     }
     if(this.dietary[3].value > 0){
-      vegan = this.dietary[3].key
-      if(vegan==="glutenfree"){
-        vegan="gluten_free"
+      this.vegan = this.dietary[3].key
+      if(this.vegan==="glutenfree"){
+        this.vegan="gluten_free"
       }
-      dietary4 = `&categories=${vegan}`
+      //dietary4 = `&categories=${vegan}`
+      dietary4 = `%2C${this.vegan}`
     }
 
     //not matching with yelp API, need to clean up 
@@ -512,7 +518,8 @@ export class ResultsComponent {
     console.log(dietary4)
     
     let test = `https://groupeats.net/restaurants/location=${this.zip}&term=restaurants&radius=8000&sort_by=best_match&limit=20&categories=${this.topvalues[0].key}%2C${this.topvalues[1].key}&price=${price}${dietary1}${dietary2}${dietary3}${dietary4}`
-    fetch(`https://groupeats.net/restaurants/location=${this.zip}&term=restaurants&radius=8000&sort_by=best_match&limit=20&categories=${this.topvalues[0].key}%2C${this.topvalues[1].key}&price=${price}${dietary1}${dietary2}${dietary3}${dietary4}`)
+    //`https://groupeats.net/restaurants/location=${this.zip}&term=restaurants&radius=8000&sort_by=best_match&limit=20&categories=${this.topvalues[0].key}%2C${this.topvalues[1].key}&price=${price}${dietary1}${dietary2}${dietary3}${dietary4}`
+    fetch(`https://groupeats.net/restaurants/location=${this.zip}&term=restaurants&radius=8000&sort_by=best_match&limit=20&categories=${this.topvalues[0].key}%2C${this.topvalues[1].key}${dietary1}${dietary2}${dietary3}${dietary4}&price=${price}`)
       .then(response => response.json())
       .then(data => {
         for(let i = 0; i < data.businesses.length; i++){

@@ -3,6 +3,11 @@
 <p>Most Votes: {{topC | titlecase}} with {{topCV}} votes</p>
 <p>Second Most Votes: {{secC | titlecase}} with {{secCV}} votes</p>
 <p>Total Number of Submissions: {{numVotes}}</p>
+<p *ngIf="halal">A person has indicated they want {{halal.replace('_', '-')}}</p>
+<p *ngIf="glutenfree">A person has indicated they want {{glutenfree.replace('_', '-')}}</p>
+<p *ngIf="vegan">A person has indicated they want {{vegan.replace('_', '-')}}</p>
+<p *ngIf="vegetarian">A person has indicated they want {{vegetarian.replace('_', '-')}}</p>
+
 <h3>Recommended Restaurants</h3>
 <!--<button (click)="generateResults()" [disabled]="resultsGenerated">Generate Results</button>-->
 
