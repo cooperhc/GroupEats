@@ -1,4 +1,5 @@
 <h1><a routerLink="/" class="groupeats-link">GroupEats</a></h1>
+<div *ngIf="!submitted">
 <div class="section-box">
 <h3>Choose Preferred Price Ranges</h3>
 
@@ -377,12 +378,15 @@
   </div>
 
 </div>
-
+</div>
 
 
 <div class="buttons-container">
-    <button (click)="submit()" [disabled]="submitted">{{ submitButtonText }}</button>
-    <button (click)="openResults()">View Results</button>
+    <div *ngIf="submitted" class="section-box">
+    <h3 *ngIf="submitted">Preferences submitted!</h3>
+    </div>
+    <button *ngIf="!submitted" (click)="submit()">{{ submitButtonText }}</button>
+    <button (click)="openResults()">View Restaurants</button>
   </div>
 <div *ngIf="errorMessage">{{ errorMessage }}</div>
 

@@ -169,7 +169,7 @@ export class VoteComponent {
     "steakhouse": "not sure",
     "halal": "not sure"
   }  
-  submitButtonText = 'Submit Vote'
+  submitButtonText = 'Submit Preferences'
 
 
   //cursed code start

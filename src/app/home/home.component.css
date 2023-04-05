@@ -36,8 +36,8 @@ button {
 }
   
 button:hover {
-    background-color: #fff;
-    color: #1e2c4a;
+    background-color: #B1D2F1;
+    color: #2B2D42;
     font-family: 'Georgia';
     font-weight: bolder;
 }
@@ -46,3 +46,10 @@ button:hover {
     text-align: center;
   }
   
+
+  input{
+    color: #2B2D42;
+    text-align: center;
+    font-family: 'Georgia';
+    font-weight: bolder;
+  }

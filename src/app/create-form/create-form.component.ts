@@ -3,6 +3,7 @@ import { Title } from '@angular/platform-browser'
 import { FormBuilder } from '@angular/forms'
 import { HttpClient } from '@angular/common/http'
 import { Router } from '@angular/router'
+import { throwError } from 'rxjs';
 
 
 interface idResponse{
@@ -21,6 +22,7 @@ export class CreateFormComponent {
   eventCreated = false
   errorMessage = ""
   eventMessage = "Create Event"
+  checked = 0
 
 
   zipForm = this.formBuilder.group({
@@ -82,6 +84,7 @@ export class CreateFormComponent {
     //Goes through each checked option, also prints, needs to be updated to check validity 
     for (let i = 0; i < checked.length; i++) {
       if (checked[i].checked) {
+        this.checked+=1
         switch (checked[i].value) {
           case 'onedollar':
             options.onedollar = true;
@@ -194,6 +197,15 @@ export class CreateFormComponent {
       zip: zipCode,
       radius: 20,
       formInfo: options
+    }
+
+    if(this.checked < 5){
+      this.errorMessage="At least 5 options must be selected"
+      this.checked = 0
+      return
+    }
+    else{
+      this.errorMessage = ""
     }
 
     this.http.post<idResponse[]>('https://groupeats.net/events', event).subscribe((response) => {

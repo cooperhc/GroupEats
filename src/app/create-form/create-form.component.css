@@ -8,6 +8,13 @@ input[type="checkbox"] {
     
 
   }
+
+  input{
+    color: #2B2D42;
+    text-align: center;
+    font-family: 'Georgia';
+    font-weight: bolder;
+  }
   
   input[type="checkbox"]:checked {
     background-color: #2196f3;
@@ -40,6 +47,26 @@ input[type="checkbox"] {
     width: 300px;
     margin-left: auto;
     margin-right:auto;
+  }  
+
+  .section-box2 {
+    background-color: #B1D2F1;
+    padding-bottom: 1px;
+    padding-top: 1px;
+    margin-bottom: 20px;
+    width: 500px;
+    margin-left: auto;
+    margin-right:auto;
+  }  
+
+  .section-box3 {
+    background-color: #2B2D42;
+    width: 150px;
+    margin-left: auto;
+    margin-right:auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }  
   
   .label {
@@ -84,14 +111,21 @@ input[type="checkbox"] {
   
   h1 {
     font-family: 'Georgia';
-    color: #1e2c4a;
+    color: #2B2D42;
     font-size: xx-large;
     font-weight: bolder;
   }
   
   h3 {
     font-family: 'Georgia';
-    color: #1e2c4a;
+    color: #2B2D42;
+    font-size: large;
+    font-weight: bolder;
+  }
+
+  h2 {
+    font-family: 'Georgia';
+    color: #B1D2F1;
     font-size: large;
     font-weight: bolder;
   }

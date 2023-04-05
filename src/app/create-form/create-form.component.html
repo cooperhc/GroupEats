@@ -1,4 +1,5 @@
 <h1><a routerLink="/" class="groupeats-link">GroupEats</a></h1>
+<div *ngIf="!eventCreated">
 <div class="section-box">
 <h3>Enter ZIP Code</h3>
 <form [formGroup]="zipForm">
@@ -8,8 +9,7 @@
     </label>
 </form>
 </div>
-  
-  
+
 <div class="section-box">
 <h3>Choose Price Options</h3>
 
@@ -264,14 +264,27 @@
     </label>
 </div>
 </div>
+</div>
 <div class="option">
-<button (click)="createEvent()" [disabled]="eventCreated">{{eventMessage}}</button>
+    <div *ngIf="errorMessage">{{ errorMessage }}</div>
+</div>
+<div class="option">
+<button *ngIf="!eventCreated" (click)="createEvent()" [disabled]="eventCreated">{{eventMessage}}</button>
+</div>
+
+<div *ngIf="eventCreated" class="section-box2">
+<div class="option">
+<h3 *ngIf="eventCreated">{{eventMessage}}</h3>
+<div *ngIf="eventCreated" class="section-box3">
+    <h2 *ngIf="eventCreated">{{id}}</h2>
+</div>
 <button *ngIf="eventCreated && !linkCopied" (click)="copyLink()">Copy Code</button>
 <button *ngIf="eventCreated && linkCopied">Code Copied</button>
 
-<button *ngIf="eventCreated" (click)="openEvent()">Open Event To Vote, After Sharing Link</button>
+<button *ngIf="eventCreated" (click)="openEvent()">Open Event To Vote, After Sharing Code</button>
 
-<div *ngIf="errorMessage">{{ errorMessage }}</div>
+
+</div>
 </div>
 
   
