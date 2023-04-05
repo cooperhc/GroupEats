@@ -117,3 +117,14 @@
     gap: 10px;
   }
   
+  body {
+    background-color: beige;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+    background-position: center center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

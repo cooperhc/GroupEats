@@ -76,6 +76,9 @@ export class ResultsComponent {
   vegan = ""
   vegetarian = ""
 
+  short = true
+  long = false
+
   results = {
     onedollar: 0,
     twodollar: 0,
@@ -164,6 +167,7 @@ export class ResultsComponent {
   zip = 0
   output2 = ""
   restaurants = [{rating: 0, price: "?", name: "", image_url: "", categories: [{title: ""}], url: "", urldir: "", coordinates: {latitude: -1, longitude: -1}, id: ""}]
+  Srestaurants = [{rating: 0, price: "?", name: "", image_url: "", categories: [{title: ""}], url: "", urldir: "", coordinates: {latitude: -1, longitude: -1}, id: ""}]
 
 
 
@@ -171,6 +175,11 @@ export class ResultsComponent {
 
   generateResults(): void{
     this.resultsGenerated = true
+  }
+  
+  showMore(): void{
+    this.short = false
+    this.long = true
   }
 
 
@@ -524,6 +533,9 @@ export class ResultsComponent {
       .then(data => {
         for(let i = 0; i < data.businesses.length; i++){
           this.restaurants[i] = (data.businesses[i])
+          if(i < 5){
+            this.Srestaurants[i] = data.businesses[i]
+          }
           if(!(this.restaurants[i].price != undefined)){this.restaurants[i].price="-"}
           this.restaurants[i].id = `https://www.google.com/maps/search/?api=1&query=${this.restaurants[i].coordinates.latitude}%2C${this.restaurants[i].coordinates.longitude}`
         }
