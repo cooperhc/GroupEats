@@ -1,5 +1,6 @@
 <h1><a routerLink="/" class="groupeats-link">GroupEats</a></h1>
 <div *ngIf="!submitted">
+<div *ngIf="priceP">
 <div class="section-box">
 <h3>Choose Preferred Price Ranges</h3>
 
@@ -44,6 +45,8 @@
     </mat-button-toggle-group>
 </div>
 </div>
+</div>
+<div *ngIf="dietaryP">
 <div class="section-box">
 <h3>Select Your Dietary Restrictions</h3>
 
@@ -86,6 +89,7 @@
       <mat-button-toggle value="gray" class="option-gray" aria-label="Prefer not">Does not apply to me</mat-button-toggle>
     </mat-button-toggle-group>
   </div>
+</div>
 </div>
 <div class="section-box">
 

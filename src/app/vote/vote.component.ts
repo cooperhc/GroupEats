@@ -121,6 +121,8 @@ export class VoteComponent {
   fishandchips = false;
   steakhouse = false;
   submitted = false;
+  dietaryP = false;
+  priceP = false;
 
   //remove and change later
   halal = false;
@@ -687,6 +689,19 @@ export class VoteComponent {
       if(this.res.twodollar){ this.twodollar = true }
       if(this.res.threedollar){ this.threedollar = true }
       if(this.res.fourdollar){ this.fourdollar = true }
+      if(this.vegetarian || this.vegan || this.halal || this.glutenfree){
+        this.dietaryP = true
+      }
+      else{
+        this.dietaryP = false
+      }
+      if(this.onedollar || this.twodollar || this.threedollar || this.fourdollar){
+        this.priceP = true
+      }
+      else{
+        this.priceP = false
+      }
+
     })
   }
 
