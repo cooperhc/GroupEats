@@ -528,7 +528,14 @@ export class ResultsComponent {
     
     let test = `https://groupeats.net/restaurants/location=${this.zip}&term=restaurants&radius=8000&sort_by=best_match&limit=20&categories=${this.topvalues[0].key}%2C${this.topvalues[1].key}&price=${price}${dietary1}${dietary2}${dietary3}${dietary4}`
     //`https://groupeats.net/restaurants/location=${this.zip}&term=restaurants&radius=8000&sort_by=best_match&limit=20&categories=${this.topvalues[0].key}%2C${this.topvalues[1].key}&price=${price}${dietary1}${dietary2}${dietary3}${dietary4}`
-    fetch(`https://groupeats.net/restaurants/location=${this.zip}&term=restaurants&radius=8000&sort_by=best_match&limit=20&categories=${this.topvalues[0].key}%2C${this.topvalues[1].key}${dietary1}${dietary2}${dietary3}${dietary4}&price=${price}`)
+    let link = ``
+    if(this.zip < 9999){
+      link = `https://groupeats.net/restaurants/location=0${this.zip}&term=restaurants&radius=8000&sort_by=best_match&limit=20&categories=${this.topvalues[0].key}%2C${this.topvalues[1].key}${dietary1}${dietary2}${dietary3}${dietary4}&price=${price}`
+    }
+    else{
+      link = `https://groupeats.net/restaurants/location=${this.zip}&term=restaurants&radius=8000&sort_by=best_match&limit=20&categories=${this.topvalues[0].key}%2C${this.topvalues[1].key}${dietary1}${dietary2}${dietary3}${dietary4}&price=${price}`
+    }
+    fetch(link)
       .then(response => response.json())
       .then(data => {
         for(let i = 0; i < data.businesses.length; i++){
